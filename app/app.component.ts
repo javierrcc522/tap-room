@@ -22,7 +22,7 @@ export class AppComponent {
   year: number = this.currentTime.getFullYear();
   selectedKeg = null;
 
-  masterKegList: Keg[] = [
+   masterKegList: Keg[] = [
     new Keg('Boneyard IPA', 'Boneyard', 5, 6, 124),
     new Keg('Modelo Negra', 'Modelo', 3, 5, 124),
     new Keg('Pilsner', 'Pfreim', 5, 6, 124)

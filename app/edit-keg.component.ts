@@ -8,7 +8,7 @@ import { Keg } from './keg.model';
       <div *ngIf="childSelectedKeg">
         <h3>{{childSelectedKeg.name}}</h3>
         <p>Keg Empty? {{childSelectedKeg.empty}}</p>
-        <p>Pints left: {{childSelectedKeg.pints}}</p>
+        <p>Pints left: {{childSelectedKeg.pints}}</p><button (click)="pintsRemovedFromKeg()">Sell a Pint</button>
         <p>Alcohol Content: {{childSelectedKeg.alcoholContent}} %</p>
         <p>Price: $ {{childSelectedKeg.price}} per pint</p>
         <hr>
@@ -37,7 +37,10 @@ export class EditKegComponent {
     this.doneButtonClickedSender.emit();
   }
 
-  sellPints() {
-
+  pintsRemovedFromKeg() {
+    this.childSelectedKeg.pints -= 1;
+    if(this.childSelectedKeg.pints <= 10) {
+      this.childSelectedKeg.empty = true;
+    }
   }
 }

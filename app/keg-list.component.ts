@@ -11,8 +11,6 @@ import { Keg } from './keg.model';
     </select>
     <ul>
       <li (click)="isEmpty(currentKeg)" *ngFor="let currentKeg of childKegList | completeness:filterByCompleteness">{{currentKeg.name}} {{currentKeg.brewery}}
-        <input *ngIf="currentKeg.empty === true" type="checkbox" checked (click)="toggleEmpty(currentKeg, false)"/>
-        <input *ngIf="currentKeg.done === false" type="checkbox" (click)="toggleEmpty(currentKeg, true)"/>
         <button (click)="editKeg(currentKeg)">Edit!</button>
       </li>
     </ul>
@@ -37,9 +35,9 @@ export class KegListComponent {
   }
 
   pintColor(currentKeg){
-    if (currentKeg.pints >= 1){
+    if (currentKeg.pints <= 1){
       return "bg-danger";
-    } else if (currentKeg.pints >= 64) {
+    } else if (currentKeg.pints <= 64) {
       return  "bg-warning";
     } else {
       return "bg-info";
