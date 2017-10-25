@@ -9,6 +9,8 @@ import { Keg } from './keg.model';
         <h3>{{childSelectedKeg.name}}</h3>
         <p>Keg Empty? {{childSelectedKeg.empty}}</p>
         <p>Pints left: {{childSelectedKeg.pints}}</p>
+        <p>Alcohol Content: {{childSelectedKeg.alcoholContent}} %</p>
+        <p>Price: $ {{childSelectedKeg.price}} per pint</p>
         <hr>
         <h3>Edit Keg</h3>
         <label>Enter Keg Name:</label>
@@ -36,6 +38,6 @@ export class EditKegComponent {
   }
 
   sellPints() {
-    
+
   }
 }
