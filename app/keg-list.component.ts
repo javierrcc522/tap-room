@@ -4,7 +4,7 @@ import { Keg } from './keg.model';
 @Component({
   selector: 'keg-list',
   template: `
-    <select (change)="onChange($event.target.value)">
+    <select class="select" (change)="onChange($event.target.value)">
       <option value="allKegs">All Kegs</option>
       <option value="completedKegs">Empty Kegs</option>
       <option value="incompleteKegs" selected="selected">Kegs</option>
@@ -38,16 +38,6 @@ export class KegListComponent {
 
   deleteKeg(kegToDelete: Keg) {
     this.deleteButtonClickSender.emit(kegToDelete);
-  }
-
-  pintColor(currentKeg){
-    if (currentKeg.pints <= 1){
-      return "bg-danger";
-    } else if (currentKeg.pints <= 64) {
-      return  "bg-warning";
-    } else {
-      return "bg-info";
-    }
   }
 
   onChange(optionFromMenu) {
