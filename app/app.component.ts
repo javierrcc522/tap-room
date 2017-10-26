@@ -7,7 +7,7 @@ import {Keg} from './keg.model';
   <div class="container">
     <h1>The Tap Room</h1>
     <h3>Current Date: {{month}}/{{day}}/{{year}}</h3>
-    <keg-list [childKegList]="masterKegList" (clickSender)="editKeg($event)"></keg-list>
+    <keg-list [childKegList]="masterKegList" (clickSender)="editKeg($event)" (deleteButtonClickSender)="deleteKeg($event)"></keg-list>
       <hr>
       <edit-keg [childSelectedKeg]="selectedKeg" (doneButtonClickedSender)="finishedEditing()"></edit-keg>
       <new-keg (newKegSender)="addKeg($event)"></new-keg>
@@ -30,6 +30,13 @@ export class AppComponent {
 
   editKeg(clickedKeg) {
     this.selectedKeg = clickedKeg;
+  }
+
+  deleteKeg(kegToDelete) {
+    if(kegToDelete === this.selectedKeg){
+      this.selectedKeg = null;
+    }
+    this.masterKegList.splice(this.masterKegList.indexOf(kegToDelete), 1)
   }
 
   finishedEditing() {

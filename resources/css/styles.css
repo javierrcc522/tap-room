@@ -6,6 +6,34 @@ img {
   height: 100px;
 }
 
+.button {
+  color: rgb(234, 180, 86);
+  background-color: rgb(80, 129, 229);
+}
+
+.button:hover {background-color: #3e8e41}
+
+.button:active {
+  background-color: #3e8e41;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+
+.button-delete {
+  color: rgb(234, 180, 86);
+  background-color: rgb(80, 129, 229);
+}
+
+.button-delete:hover {background-color: rgb(158, 47, 34)}
+
+.button-delete:active {
+  background-color: rgb(158, 47, 34);
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+
+}
+
+
 #edit-keg-div {
   text-align: center;
 }
@@ -16,7 +44,7 @@ form {
 }
 
 input {
-  
+  background-color: rgb(220, 224, 232);
 }
 
 label, input {

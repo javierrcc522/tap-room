@@ -11,7 +11,8 @@ import { Keg } from './keg.model';
     </select>
     <ul>
       <li (click)="isEmpty(currentKeg)" *ngFor="let currentKeg of childKegList | completeness:filterByCompleteness">{{currentKeg.name}} {{currentKeg.brewery}} <img src='{{currentKeg.graphic}}'>
-        <button (click)="editKeg(currentKeg)">Edit!</button>
+        <button class="button" (click)="editKeg(currentKeg)">Edit!</button>
+        <button class="button-delete" (click)="deleteKeg(currentKeg)">Delete!</button>
       </li>
     </ul>
   `
@@ -20,6 +21,7 @@ import { Keg } from './keg.model';
 export class KegListComponent {
   @Input() childKegList: Keg[];
   @Output() clickSender = new EventEmitter();
+  @Output() deleteButtonClickSender = new EventEmitter();
   filterByCompleteness: string = "incompleteKegs";
 
   isEmpty(clickedKeg: Keg) {
@@ -32,6 +34,10 @@ export class KegListComponent {
 
   editKeg(kegToEdit: Keg) {
     this.clickSender.emit(kegToEdit);
+  }
+
+  deleteKeg(kegToDelete: Keg) {
+    this.deleteButtonClickSender.emit(kegToDelete);
   }
 
   pintColor(currentKeg){
