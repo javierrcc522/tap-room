@@ -10,7 +10,7 @@ import { Keg } from './keg.model';
       <option value="incompleteKegs" selected="selected">Kegs</option>
     </select>
     <ul>
-      <li (click)="isEmpty(currentKeg)" *ngFor="let currentKeg of childKegList | completeness:filterByCompleteness">{{currentKeg.name}} {{currentKeg.brewery}}
+      <li (click)="isEmpty(currentKeg)" *ngFor="let currentKeg of childKegList | completeness:filterByCompleteness">{{currentKeg.name}} {{currentKeg.brewery}} <img src='{{currentKeg.graphic}}'>
         <button (click)="editKeg(currentKeg)">Edit!</button>
       </li>
     </ul>

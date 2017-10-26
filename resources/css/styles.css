@@ -1,0 +1,38 @@
+body {
+  background-color: rgb(18, 35, 61);
+  color: rgb(186, 160, 128)
+}
+img {
+  height: 100px;
+}
+
+#edit-keg-div {
+  text-align: center;
+}
+
+form {
+    width: 80%;
+    margin: 0 auto;
+}
+
+input {
+  
+}
+
+label, input {
+    display: inline-block;
+}
+
+label {
+    width: 30%;
+    text-align: right;
+}
+
+label + input {
+    width: 10%;
+    margin: 0 30% 0 4%;
+}
+
+input + input {
+    float: right;
+}

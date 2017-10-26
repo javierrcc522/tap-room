@@ -13,4 +13,6 @@ import { CompletenessPipe } from './completeness.pipe';
   bootstrap: [ AppComponent ]
 })
 
-export class AppModule { }
+export class AppModule {
+
+ }
